@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="flash">
+        <property name="context-root" value="cardgame0-flash"/>
+        <property name="java-output-path" value="/flash/target/classes"/>
+    </wb-module>
+</project-modules>

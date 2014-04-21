@@ -97,6 +97,9 @@ public class Menu extends AppScene
         }
       });
     }
+    
+    // MT During debug - automatically open our game
+    gameMain.activateScene(gameMain.scenes.get(1));
   }
 
   @Override

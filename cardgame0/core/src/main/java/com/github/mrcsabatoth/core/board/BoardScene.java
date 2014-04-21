@@ -2,6 +2,7 @@ package com.github.mrcsabatoth.core.board;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.github.mrcsabatoth.core.AppScene;
 
@@ -29,7 +30,7 @@ public class BoardScene extends AppScene {
       // create and add background image layer
       layer = graphics().createGroupLayer();
       graphics().rootLayer().add(layer);
-      
+            
       // load a sound that we'll play when placing sprites
       ding = assets().getSound("sounds/ding");
 
@@ -54,13 +55,31 @@ public class BoardScene extends AppScene {
         }
       });
 
+      Random rnd = new Random();
+      rnd.setSeed(11223344L);
       for(int bx = 0; bx < 5; bx++) {
         for(int by = 0; by < 5; by++) {
-          CardSuit rndSuit = CardSuit.getValueFromDouble(Math.random());
-          CardValue rndValue = CardValue.getValueFromDouble(Math.random());
+          CardSuit rndSuit = CardSuit.getValueFromInt(rnd.nextInt(4));
+          CardValue rndValue = CardValue.getValueFromInt(rnd.nextInt(13));
           addCard(bx * 64, by * 64, rndSuit, rndValue);
         }
       }
+	
+      addCard(300f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_A);
+      addCard(364f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_2);
+      addCard(428f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_3);
+      
+      addCard(300f, 192f, CardSuit.SUIT_SPADE, CardValue.VALUE_A);
+      addCard(364f, 192f, CardSuit.SUIT_SPADE, CardValue.VALUE_2);
+      addCard(428f, 192f, CardSuit.SUIT_SPADE, CardValue.VALUE_3);      
+      
+      addCard(300f, 300f, CardSuit.SUIT_DIAMOND, CardValue.VALUE_A);
+      addCard(364f, 300f, CardSuit.SUIT_DIAMOND, CardValue.VALUE_2);
+      addCard(428f, 300f, CardSuit.SUIT_DIAMOND, CardValue.VALUE_3);
+      
+      addCard(300f, 364f, CardSuit.SUIT_HEART, CardValue.VALUE_Q);
+      addCard(364f, 364f, CardSuit.SUIT_HEART, CardValue.VALUE_K);
+      addCard(428f, 364f, CardSuit.SUIT_HEART, CardValue.VALUE_A);
 	}
 
     private void addCard(float x, float y, CardSuit suit, CardValue value) {

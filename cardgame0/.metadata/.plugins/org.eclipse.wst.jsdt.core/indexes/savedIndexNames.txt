@@ -1,0 +1,2 @@
+INDEX VERSION 1.122+C:\projects\Github\CardGame0\cardgame0\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2741158193.index
