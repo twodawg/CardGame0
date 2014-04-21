@@ -1,5 +1,7 @@
 package com.github.mrcsabatoth.core.board;
 
+import java.util.Random;
+
 /**
  *  Modified from 
  *  http://math.hws.edu/javanotes/source/Deck.java
@@ -65,8 +67,10 @@ public class Deck {
     * shuffle the deck into a random order.
     */
    public void shuffle() {
+	  Random rnd = new Random();
+	  rnd.setSeed(11223344L);
       for ( int i = deck.length-1; i > 0; i-- ) {
-         int rand = (int)(Math.random()*(i+1));
+         int rand = (int)(rnd.nextDouble()*(i+1));
          Card temp = deck[i];
          deck[i] = deck[rand];
          deck[rand] = temp;

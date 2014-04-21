@@ -19,6 +19,7 @@ public class BoardScene extends AppScene {
     private GroupLayer layer;
     private List<PlayCard> cards = new ArrayList<PlayCard>(0);
     private Sound ding;
+    private Sound cannery;
 
 	@Override
 	public String name() {
@@ -33,6 +34,10 @@ public class BoardScene extends AppScene {
             
       // load a sound that we'll play when placing sprites
       ding = assets().getSound("sounds/ding");
+      
+      cannery = assets().getSound("sounds/Cannery");
+      cannery.setVolume(.25f);
+      cannery.play();
 
       // draw a green flat background
       CanvasImage bgtile = graphics().createImage(64, 64);
