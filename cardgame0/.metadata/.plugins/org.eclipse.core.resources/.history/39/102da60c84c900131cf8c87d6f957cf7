@@ -1,0 +1,5 @@
+package com.github.mrcsabatoth.core.board;
+
+public class Card {
+
+}

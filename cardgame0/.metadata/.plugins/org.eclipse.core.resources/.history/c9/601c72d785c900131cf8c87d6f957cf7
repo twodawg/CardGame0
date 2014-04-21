@@ -55,7 +55,7 @@ public class BoardScene extends AppScene {
         }
       });
 
-      /*Random rnd = new Random();
+      Random rnd = new Random();
       rnd.setSeed(11223344L);
       for(int bx = 0; bx < 5; bx++) {
         for(int by = 0; by < 5; by++) {
@@ -63,15 +63,7 @@ public class BoardScene extends AppScene {
           CardValue rndValue = CardValue.getValueFromInt(rnd.nextInt(13));
           addCard(128 + bx * 64, 64 + by * 64, rndSuit, rndValue);
         }
-      }*/
-      Deck singledeck = new Deck();
-      singledeck.shuffle();
-      for(int bx = 0; bx < 5; bx++) {
-          for(int by = 0; by < 5; by++) {
-        	  Card card = singledeck.dealCard();
-        	  addCard(128 + bx * 64, 64 + by * 64, card.getSuit(), card.getValue());
-		  }
-		}
+      }
 	
       /*addCard(300f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_A);
       addCard(364f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_2);

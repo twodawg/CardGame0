@@ -64,14 +64,14 @@ public class BoardScene extends AppScene {
           addCard(128 + bx * 64, 64 + by * 64, rndSuit, rndValue);
         }
       }*/
-      Deck singledeck = new Deck();
-      singledeck.shuffle();
+      Deck() = new Deck();
       for(int bx = 0; bx < 5; bx++) {
           for(int by = 0; by < 5; by++) {
-        	  Card card = singledeck.dealCard();
-        	  addCard(128 + bx * 64, 64 + by * 64, card.getSuit(), card.getValue());
-		  }
-		}
+            CardSuit rndSuit = CardSuit.getValueFromInt(rnd.nextInt(4));
+            CardValue rndValue = CardValue.getValueFromInt(rnd.nextInt(13));
+            addCard(128 + bx * 64, 64 + by * 64, rndSuit, rndValue);
+          }
+        }
 	
       /*addCard(300f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_A);
       addCard(364f, 128f, CardSuit.SUIT_SPADE, CardValue.VALUE_2);
